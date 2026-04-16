@@ -443,6 +443,13 @@ body::before {
 }
 
 @media (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+    }
+
     .hero {
         min-height: 340px;
         padding-top: 0 !important;
@@ -477,6 +484,23 @@ body::before {
         inset: 0;
         min-height: 100%;
         z-index: -1;
+        animation: none;
+        opacity: 0.55;
+    }
+
+    .navbar,
+    .hero,
+    .productos,
+    .producto-card {
+        backdrop-filter: none;
+    }
+
+    .producto-card,
+    .producto-imagen .producto-foto,
+    .btn-add-cart,
+    .btn-success,
+    .whatsapp-float {
+        transition: none;
     }
 
     .container,
