@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bagBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6c8d2"/>
+      <stop offset="100%" stop-color="#d98ca0"/>
+    </linearGradient>
+    <linearGradient id="bagFlap" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbe5ea"/>
+      <stop offset="100%" stop-color="#e8b4c1"/>
+    </linearGradient>
+  </defs>
+  <path d="M18 26c0-7.2 5.8-13 13-13h2c7.2 0 13 5.8 13 13v3h-4v-3c0-5-4-9-9-9h-2c-5 0-9 4-9 9v3h-4v-3z" fill="#7c4a57"/>
+  <path d="M14 28h36a4 4 0 0 1 4 4v15c0 5-4 9-9 9H19c-5 0-9-4-9-9V32a4 4 0 0 1 4-4z" fill="url(#bagBody)" stroke="#7c4a57" stroke-width="2"/>
+  <path d="M14 32c5-4 12-6 18-6s13 2 18 6v6H14v-6z" fill="url(#bagFlap)"/>
+  <circle cx="32" cy="39" r="3.5" fill="#7c4a57"/>
+  <path d="M25 28v-2.5c0-3.3 2.7-6 6-6h2c3.3 0 6 2.7 6 6V28" fill="none" stroke="#7c4a57" stroke-linecap="round" stroke-width="2.5"/>
+  <path d="M22 47h20" stroke="#fff7f9" stroke-linecap="round" stroke-width="2" opacity="0.75"/>
+</svg>

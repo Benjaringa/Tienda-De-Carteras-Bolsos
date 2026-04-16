@@ -1,0 +1,626 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c2c7 45%, #fdf2f8 100%);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    
+    /* Fondo rosa suave */
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c2c7 45%, #fdf2f8 100%);
+    
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    isolation: isolate;
+}
+
+/* Efecto glitter rosa más visible */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image: 
+        radial-gradient(circle at 15% 25%, rgba(255,182,193,0.8) 1px, transparent 1px),
+        radial-gradient(circle at 35% 15%, rgba(255,192,203,0.6) 1.2px, transparent 1.2px),
+        radial-gradient(circle at 55% 35%, rgba(255,160,180,0.9) 1px, transparent 1px),
+        radial-gradient(circle at 75% 20%, rgba(255,105,180,0.7) 1.1px, transparent 1.1px),
+        radial-gradient(circle at 85% 45%, rgba(255,182,193,0.8) 1px, transparent 1px),
+        radial-gradient(circle at 25% 65%, rgba(255,192,203,0.6) 1.3px, transparent 1.3px),
+        radial-gradient(circle at 45% 75%, rgba(255,20,147,0.5) 1px, transparent 1px),
+        radial-gradient(circle at 65% 85%, rgba(255,105,180,0.7) 1.2px, transparent 1.2px),
+        radial-gradient(circle at 90% 70%, rgba(255,182,193,0.8) 1px, transparent 1px),
+        radial-gradient(circle at 10% 85%, rgba(255,192,203,0.6) 1.1px, transparent 1.1px),
+        radial-gradient(circle at 80% 10%, rgba(238,130,238,0.5) 0.8px, transparent 0.8px),
+        radial-gradient(circle at 60% 60%, rgba(221,160,221,0.7) 1px, transparent 1px),
+        radial-gradient(circle at 40% 90%, rgba(255,182,193,0.6) 1.1px, transparent 1.1px),
+        radial-gradient(circle at 20% 40%, rgba(255,105,180,0.8) 0.9px, transparent 0.9px),
+        radial-gradient(circle at 95% 55%, rgba(238,130,238,0.5) 1px, transparent 1px),
+        radial-gradient(circle at 30% 50%, rgba(255,228,225,0.6) 0.7px, transparent 0.7px),
+        radial-gradient(circle at 70% 30%, rgba(255,192,203,0.8) 0.9px, transparent 0.9px),
+        radial-gradient(circle at 50% 80%, rgba(255,160,180,0.5) 1px, transparent 1px),
+        radial-gradient(circle at 85% 15%, rgba(255,20,147,0.4) 0.8px, transparent 0.8px),
+        radial-gradient(circle at 15% 70%, rgba(221,160,221,0.6) 1px, transparent 1px);
+    background-size: 
+        120px 120px, 180px 180px, 140px 140px, 160px 160px, 100px 100px,
+        170px 170px, 130px 130px, 150px 150px, 110px 110px, 200px 200px,
+        90px 90px, 210px 210px, 80px 80px, 190px 190px, 70px 70px,
+        220px 220px, 95px 95px, 175px 175px, 125px 125px, 85px 85px;
+    animation: glitterShine 6s ease-in-out infinite alternate;
+}
+
+@keyframes glitterShine {
+    0% {
+        opacity: 0.8;
+        transform: translateX(0px) translateY(0px);
+    }
+    25% {
+        opacity: 1;
+        transform: translateX(3px) translateY(2px);
+    }
+    50% {
+        opacity: 0.9;
+        transform: translateX(-2px) translateY(3px);
+    }
+    75% {
+        opacity: 1;
+        transform: translateX(2px) translateY(-1px);
+    }
+    100% {
+        opacity: 0.85;
+        transform: translateX(-1px) translateY(-2px);
+    }
+}
+
+/* Bootstrap */
+
+/* Header personalizado */
+.navbar {
+    background: rgba(255, 255, 255, 0.92) !important;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.navbar-brand .logo h1 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #34495e;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.12em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.navbar-brand .logo p {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    font-style: normal;
+    margin-top: -5px;
+}
+
+.nav-link {
+    color: #333 !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #666 !important;
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #666, #999);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Secciones principales */
+.hero, .productos {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    margin: 18px;
+    border-radius: 12px;
+    box-shadow: 
+        0 6px 20px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.hero {
+    position: relative;
+    background:
+        linear-gradient(rgba(44, 62, 80, 0.38), rgba(44, 62, 80, 0.38)),
+        url('https://images.creativefabrica.com/products/previews/2024/01/08/ewo9vrwkQ/2ajzx4EPgseda16BTS2WERD8CVR-desktop.jpg') center/cover no-repeat;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.hero .row {
+    flex: 1;
+    align-items: center;
+}
+
+.productos {
+    background: rgba(255, 255, 255, 0.82);
+}
+
+.productos .row {
+    justify-content: center;
+}
+
+.productos .col-md-6,
+.productos .col-lg-4 {
+    display: flex;
+    justify-content: center;
+}
+
+/* Títulos de sección */
+.section-title {
+    font-size: 2.3rem;
+    color: #2c3e50;
+    font-weight: 600;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.04em;
+    text-shadow: 1px 1px 3px rgba(139, 125, 125, 0.1)
+}
+
+/* Hero content */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .display-4 {
+    color: #111111;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.35);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    letter-spacing: 0.08em;
+    padding: 18px 32px;
+    border-radius: 18px;
+    background: transparent;
+    backdrop-filter: none;
+    display: inline-block;
+    font-size: clamp(1.8rem, 4vw, 3.5rem);
+    max-width: min(90%, 760px);
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card-title,
+.precio {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.03em;
+}
+
+.hero .lead {
+    color: #5d6d7e;
+    font-size: 1.15rem;
+}
+
+/* Botones personalizados */
+.btn-primary {
+    background: linear-gradient(135deg, #5d6d7e, #85929e);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 12px rgba(93, 109, 126, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(93, 109, 126, 0.4);
+    background: linear-gradient(135deg, #4a5a6b, #7b8794);
+}
+
+/* Cards de productos */
+.producto-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(189, 195, 199, 0.3) !important;
+    border-radius: 10px !important;
+    transition: all 0.25s ease;
+    width: 100%;
+    box-shadow: 
+        0 5px 18px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.6) !important;
+    backdrop-filter: blur(3px);
+}
+
+.producto-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+        0 12px 25px rgba(0,0,0,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.7) !important;
+}
+
+.producto-imagen {
+    position: relative;
+    margin-bottom: 20px;
+    min-height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.producto-imagen .producto-foto {
+    max-width: 100%;
+    height: 190px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.producto-imagen-simple .producto-foto {
+    width: min(100%, 240px);
+}
+
+.producto-imagen-doble .producto-foto {
+    width: calc(50% - 18px);
+}
+
+.producto-slash {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 50%;
+    display: none;
+    width: 3px;
+    background: linear-gradient(180deg, rgba(192, 108, 132, 0.1), rgba(192, 108, 132, 0.9), rgba(192, 108, 132, 0.15));
+    transform: translateX(-50%) rotate(18deg);
+    border-radius: 999px;
+    box-shadow: 0 0 12px rgba(192, 108, 132, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-card:hover .producto-slash {
+    transform: translateX(8px) rotate(18deg);
+    box-shadow: 0 0 16px rgba(192, 108, 132, 0.35);
+}
+
+.producto-imagen .producto-foto:hover {
+    transform: scale(1.05);
+}
+
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 58px;
+    height: 58px;
+    background: #25d366;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+    transition: all 0.25s ease;
+    z-index: 1000;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    background: #22c55e;
+}
+
+.whatsapp-icon {
+    width: 30px;
+    height: 30px;
+    color: white;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* Responsive */
+
+/* pc 1025px en adelante */
+@media (min-width: 1025px) {
+    .section-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero .display-4 {
+        font-size: 3.5rem;
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+    
+    .whatsapp-float {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .whatsapp-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .producto-imagen {
+        min-height: 220px;
+    }
+
+    .producto-imagen .producto-foto {
+        height: 220px;
+    }
+}
+
+/* Tablet - 769px a 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .hero {
+        min-height: 460px;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .hero .container {
+        min-height: 460px;
+    }
+
+    .hero-content {
+        min-height: 460px;
+        padding: 0 24px;
+    }
+    
+    .hero .display-4 {
+        font-size: clamp(1.9rem, 4.2vw, 2.7rem);
+        margin-bottom: 0 !important;
+        max-width: 88%;
+    }
+
+    .hero, .productos {
+        margin: 15px;
+    }
+    
+    .whatsapp-float {
+        width: 58px;
+        height: 58px;
+        bottom: 25px;
+        left: 25px;
+    }
+    
+    .whatsapp-icon {
+        width: 29px;
+        height: 29px;
+    }
+    
+    .producto-imagen {
+        min-height: 190px;
+    }
+
+    .producto-imagen .producto-foto {
+        height: 190px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 340px;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        background-position: center center;
+    }
+
+    .hero-content {
+        min-height: 340px;
+        padding: 0 10px;
+        align-items: center;
+    }
+
+    .hero .container {
+        min-height: 340px;
+    }
+
+    .hero .display-4 {
+        font-size: clamp(1.45rem, 7vw, 2.1rem);
+        max-width: 92%;
+        padding: 14px 18px;
+        letter-spacing: 0.04em;
+        margin-bottom: 0 !important;
+        transform: translateY(34px);
+    }
+}
+
+/* celular - hasta 768px */
+@media (max-width: 768px) {
+    body::before {
+        position: absolute;
+        inset: 0;
+        min-height: 100%;
+        z-index: -1;
+    }
+
+    .container,
+    .row {
+        max-width: 100%;
+    }
+
+    .productos .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .productos .row {
+        --bs-gutter-x: 0;
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
+    }
+
+    .productos .col-md-6,
+    .productos .col-lg-4 {
+        flex: 0 0 100%;
+        max-width: 340px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .hero .container,
+    .hero .row,
+    .hero-content {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .hero .display-4 {
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero .display-4 {
+        font-size: 2rem;
+        padding: 20px 22px;
+        max-width: 92%;
+        transform: translateY(34px);
+    }
+    
+    .hero, .productos {
+        margin: 10px;
+    }
+
+    .whatsapp-float {
+        bottom: 20px;
+        left: 20px;
+        width: 55px;
+        height: 55px;
+    }
+    
+    .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .producto-imagen {
+        min-height: 155px;
+        gap: 10px;
+    }
+
+    .producto-imagen .producto-foto {
+        height: 155px;
+    }
+
+    .producto-imagen-doble .producto-foto {
+        width: calc(50% - 14px);
+    }
+
+    .producto-slash {
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+    }
+    
+    .navbar-brand .logo h1 {
+        font-size: 1.7rem;
+    }
+    
+    .navbar-brand .logo p {
+        font-size: 0.8rem;
+    }
+}
+
+/*precios*/
+.precio {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #000000;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.btn-add-cart, .btn-success {
+    background: linear-gradient(135deg, #ff007b, #ff007b) !important;
+    border: none !important;
+    border-radius: 7px !important;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 10px rgba(39, 174, 96, 0.25);
+}
+
+.btn-add-cart:hover, .btn-success:hover {
+    transform: translateY(-1px) !important;
+    background: linear-gradient(135deg, #ff007b, #ff007b) !important;
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.35) !important;
+}
+
+/* Footer */
+footer {
+    background: rgba(255, 255, 255, 0.88);
+    border-top: 1px solid rgba(189, 195, 199, 0.3);
+    margin-top: 25px;
+}
+
+footer p {
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero .display-4 {
+        font-size: 2rem;
+    }
+    
+    .hero, .productos {
+        margin: 10px;
+    }
+}
