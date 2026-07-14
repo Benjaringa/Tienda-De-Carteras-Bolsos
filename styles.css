@@ -396,6 +396,36 @@ body::before {
     width: min(100%, 240px);
 }
 
+.producto-imagen-ajustada .producto-foto {
+    width: 220px;
+    height: 190px;
+    object-fit: cover;
+    object-position: center 38%;
+}
+
+.producto-imagen-ajustada {
+    min-height: 190px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.producto-foto-ajustada {
+    width: 220px !important;
+    height: 190px !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center 38% !important;
+    transform: none !important;
+    transform-origin: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.producto-foto-ajustada:hover {
+    transform: none !important;
+}
+
 .producto-imagen-doble .producto-foto {
     width: calc(50% - 18px);
 }
