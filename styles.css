@@ -5,7 +5,7 @@
 }
 
 html {
-    background: linear-gradient(135deg, #f8d7da 0%, #f5c2c7 45%, #fdf2f8 100%);
+    background: #000000;
     width: 100%;
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -16,8 +16,8 @@ body {
     line-height: 1.6;
     color: #2c3e50;
     
-    /* Fondo rosa suave */
-    background: linear-gradient(135deg, #f8d7da 0%, #f5c2c7 45%, #fdf2f8 100%);
+    /* Fondo negro */
+    background: #000000;
     
     position: relative;
     width: 100%;
@@ -90,22 +90,22 @@ body::before {
 
 /* Header personalizado */
 .navbar {
-    background: rgba(255, 255, 255, 0.92) !important;
+    background: rgba(78, 78, 78, 0.88) !important;
     backdrop-filter: blur(8px);
-    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-    border-bottom: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 3px 18px rgba(0,0,0,0.35);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.navbar-brand .logo h1 {
-    font-size: 1.9rem;
+.navbar-brand.logo h1 {
+    font-size: 1.5rem;
     font-weight: 600;
-    color: #34495e;
-    font-family: 'Cormorant Garamond', serif;
+    color: #f2ece7;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.12em;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.35);
 }
 
-.navbar-brand .logo p {
+.navbar-brand.logo p {
     font-size: 0.85rem;
     color: #7f8c8d;
     font-style: normal;
@@ -195,7 +195,7 @@ body::before {
     position: relative;
     background:
         linear-gradient(rgba(44, 62, 80, 0.38), rgba(44, 62, 80, 0.38)),
-        url('https://images.creativefabrica.com/products/previews/2024/01/08/ewo9vrwkQ/2ajzx4EPgseda16BTS2WERD8CVR-desktop.jpg') center/cover no-repeat;
+        url('cartera.jpg/cartera para la pagina.jpeg') center 82%/cover no-repeat;
     min-height: 420px;
     display: flex;
     align-items: center;
@@ -214,7 +214,7 @@ body::before {
 }
 
 .productos {
-    background: rgba(255, 255, 255, 0.82);
+    background: rgba(58, 58, 64, 0.82);
 }
 
 .productos-ninas {
@@ -239,7 +239,7 @@ body::before {
 /* Títulos de sección */
 .section-title {
     font-size: 2.3rem;
-    color: #2c3e50;
+    color: #d0d0d0;
     font-weight: 600;
     font-family: 'Cormorant Garamond', serif;
     letter-spacing: 0.04em;
@@ -292,12 +292,12 @@ body::before {
 }
 
 .hero .display-4 {
-    color: #111111;
-    font-weight: 600;
-    text-shadow: 0 2px 8px rgba(255,255,255,0.35);
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    letter-spacing: 0.08em;
+    color: #d0d0d0;
+    font-weight: 400;
+    text-shadow: 0 3px 14px rgba(0,0,0,0.55);
+    font-family: 'Italiana', serif;
+    font-style: normal;
+    letter-spacing: 0.06em;
     padding: 18px 32px;
     border-radius: 18px;
     background: transparent;
@@ -341,27 +341,36 @@ body::before {
 
 /* Cards de productos */
 .producto-card {
-    background: rgba(255, 255, 255, 0.95) !important;
-    border: 1px solid rgba(189, 195, 199, 0.3) !important;
+    background: linear-gradient(180deg, rgba(22, 22, 24, 0.96), rgba(34, 34, 38, 0.94)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
     border-radius: 10px !important;
     transition: all 0.25s ease;
     width: 100%;
     box-shadow: 
-        0 5px 18px rgba(0,0,0,0.08),
-        inset 0 1px 0 rgba(255,255,255,0.6) !important;
+        0 10px 24px rgba(0,0,0,0.32),
+        inset 0 1px 0 rgba(255,255,255,0.04) !important;
     backdrop-filter: blur(3px);
+    color: #f4e9ed;
 }
 
 .producto-card:hover {
     transform: translateY(-6px);
     box-shadow: 
-        0 12px 25px rgba(0,0,0,0.12),
-        inset 0 1px 0 rgba(255,255,255,0.7) !important;
+        0 14px 28px rgba(0,0,0,0.42),
+        inset 0 1px 0 rgba(255,255,255,0.08) !important;
 }
 
 .producto-card-kids {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 244, 249, 0.96)) !important;
     border-color: rgba(233, 139, 177, 0.32) !important;
+}
+
+.producto-card .card-title {
+    color: #fff5f7;
+}
+
+.producto-card .card-text {
+    color: rgba(244, 233, 237, 0.82);
 }
 
 .producto-card-kids .card-body {
@@ -661,20 +670,22 @@ body::before {
     }
 
     .hero {
-        min-height: 340px;
+        min-height: 430px;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
-        background-position: center center;
+        background:
+            linear-gradient(rgba(44, 62, 80, 0.3), rgba(44, 62, 80, 0.3)),
+            url('cartera.jpg/cartera para la pagina.jpeg') center 32%/cover no-repeat;
     }
 
     .hero-content {
-        min-height: 340px;
+        min-height: 430px;
         padding: 0 10px;
         align-items: center;
     }
 
     .hero .container {
-        min-height: 340px;
+        min-height: 430px;
     }
 
     .hero .display-4 {
@@ -840,33 +851,39 @@ body::before {
         font-size: 1.7rem;
     }
     
-    .navbar-brand .logo p {
+    .navbar-brand.logo h1 {
         font-size: 0.8rem;
     }
 }
-
 /*precios*/
 .precio {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #000000;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    color: #f9d7df;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.35);
 }
 
-.btn-add-cart, .btn-success {
-    background: linear-gradient(135deg, #ff007b, #ff007b) !important;
-    border: none !important;
+.producto-card .btn.btn-success.btn-add-cart,
+.btn-add-cart,
+.btn-success {
+    background: linear-gradient(135deg, #7a1028, #9a203c) !important;
+    background-color: #7a1028 !important;
+    border: 1px solid rgba(255, 220, 228, 0.08) !important;
+    color: #fff4f7 !important;
     border-radius: 7px !important;
     padding: 10px 20px;
     font-weight: 500;
     transition: all 0.2s ease;
-    box-shadow: 0 3px 10px rgba(39, 174, 96, 0.25);
+    box-shadow: 0 3px 10px rgba(122, 16, 40, 0.35);
 }
 
-.btn-add-cart:hover, .btn-success:hover {
+.producto-card .btn.btn-success.btn-add-cart:hover,
+.btn-add-cart:hover,
+.btn-success:hover {
     transform: translateY(-1px) !important;
-    background: linear-gradient(135deg, #ff007b, #ff007b) !important;
-    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.35) !important;
+    background: linear-gradient(135deg, #640d20, #861a32) !important;
+    background-color: #640d20 !important;
+    box-shadow: 0 5px 15px rgba(122, 16, 40, 0.45) !important;
 }
 
 /* Footer */
