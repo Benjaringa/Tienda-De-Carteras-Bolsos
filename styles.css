@@ -543,31 +543,60 @@ body::before {
     outline-offset: 3px;
 }
 
-/* Botón flotante de WhatsApp */
-.whatsapp-float {
+/* Botones flotantes de redes */
+.social-floats {
     position: fixed;
-    bottom: 25px;
     left: 25px;
+    bottom: 25px;
+    display: flex;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.social-float {
     width: 58px;
     height: 58px;
-    background: #25d366;
     border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
     transition: all 0.25s ease;
-    z-index: 1000;
     text-decoration: none;
 }
 
-.whatsapp-float:hover {
+.whatsapp-float {
+    background: #25d366;
+    box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+
+.social-float:hover {
     transform: translateY(-3px) scale(1.05);
+}
+
+.whatsapp-float:hover {
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
     background: #22c55e;
 }
 
+.instagram-float {
+    background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #515bd4 100%);
+    box-shadow: 0 4px 16px rgba(221, 42, 123, 0.35);
+    color: #ffffff;
+}
+
+.instagram-float:hover {
+    box-shadow: 0 6px 22px rgba(221, 42, 123, 0.5);
+    filter: saturate(1.06);
+}
+
 .whatsapp-icon {
+    width: 30px;
+    height: 30px;
+    color: white;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.instagram-icon {
     width: 30px;
     height: 30px;
     color: white;
@@ -590,12 +619,17 @@ body::before {
         min-height: 520px;
     }
     
-    .whatsapp-float {
+    .social-float {
         width: 65px;
         height: 65px;
     }
     
     .whatsapp-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .instagram-icon {
         width: 32px;
         height: 32px;
     }
@@ -640,11 +674,14 @@ body::before {
         margin: 15px;
     }
     
-    .whatsapp-float {
-        width: 58px;
-        height: 58px;
+    .social-floats {
         bottom: 25px;
         left: 25px;
+    }
+
+    .social-float {
+        width: 58px;
+        height: 58px;
     }
     
     .whatsapp-icon {
@@ -756,7 +793,7 @@ body::before {
     .producto-imagen .producto-foto,
     .btn-add-cart,
     .btn-success,
-    .whatsapp-float {
+    .social-float {
         transition: none;
     }
 
@@ -816,14 +853,22 @@ body::before {
         margin: 10px;
     }
 
-    .whatsapp-float {
+    .social-floats {
         bottom: 20px;
         left: 20px;
+    }
+
+    .social-float {
         width: 55px;
         height: 55px;
     }
     
     .whatsapp-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .instagram-icon {
         width: 28px;
         height: 28px;
     }
