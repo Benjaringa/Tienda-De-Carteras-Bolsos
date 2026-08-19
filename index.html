@@ -541,7 +541,7 @@
                             <h3 class="card-title">Lentes De Sol</h3>
                             <p class="card-text"></p>
                             <div class="precio mb-3">$7.500</div>
-                            <a href="https://wa.me/5493814781295?text=Hola!%20Me%20interesan%20los%20anteojos.%20%C2%BFEst%C3%A1n%20disponibles?" class="btn btn-success btn-add-cart" target="_blank" rel="noopener noreferrer">Consultar</a>
+                            <a href="https://wa.me/5493814781295?text=Hola!%20Me%20interesan%20los%20Lentes%20De%20Sol.%20%C2%BFEst%C3%A1n%20disponibles?" class="btn btn-success btn-add-cart" target="_blank" rel="noopener noreferrer">Consultar</a>
                         </div>
                     </div>
                 </div>
@@ -610,8 +610,11 @@
                 return;
             }
 
-            const article = /^bolso\b/i.test(title) ? 'el' : 'la';
-            const message = `Hola! Me interesa ${article} ${title}. ¿Está disponible?`;
+            const article = /^bolso\b/i.test(title) ? 'el' : /^lentes\b/i.test(title) ? 'los' : 'la';
+            const isPlural = /^lentes\b/i.test(title);
+            const message = isPlural
+                ? `Hola! Me interesan ${article} ${title}. ¿Están disponibles?`
+                : `Hola! Me interesa ${article} ${title}. ¿Está disponible?`;
             button.href = `${whatsappBaseUrl}${encodeURIComponent(message)}`;
         });
 
