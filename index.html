@@ -924,8 +924,8 @@
                 return;
             }
 
-            const article = /^bolso\b/i.test(title) ? 'el' : /^lentes\b/i.test(title) ? 'los' : 'la';
-            const isPlural = /^lentes\b/i.test(title);
+            const article = /^bolso\b/i.test(title) ? 'el' : /^(lentes|bandoleras)\b/i.test(title) ? (/^bandoleras\b/i.test(title) ? 'las' : 'los') : 'la';
+            const isPlural = /^(lentes|bandoleras)\b/i.test(title);
             const message = isPlural
                 ? `Hola! Me interesan ${article} ${title}. ¿Están disponibles?`
                 : `Hola! Me interesa ${article} ${title}. ¿Está disponible?`;
